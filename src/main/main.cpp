@@ -65,10 +65,11 @@ int main()
     std::cout << "        DBC supported client build: " << ACHIEVEMENT_CRITERIA_DBC_CLIENT_BUILD << "\n\n";
 
     DBCSpell.Load(SPELL_DBC);
+#if 0
     DBCAchievement.Load(ACHIEVEMENT_DBC);
     DBCAchievementCategory.Load(ACHIEVEMENT_CATEGORY_DBC);
     DBCAchievementCriteria.Load(ACHIEVEMENT_CRITERIA_DBC);
-
+#endif
     if(check_dbc())
     {
         dump_sql();
@@ -106,7 +107,7 @@ bool check_dbc()
         return false;
     }
     std::cout << SPELL_DBC << " - DBC format: OK." << "\n\n";
-
+#endif
     /********** Achievement.dbc **********/
     if(!DBCAchievement.getNumFields())
     {
@@ -172,7 +173,7 @@ bool check_dbc()
         return false;
     }
     std::cout << ACHIEVEMENT_CRITERIA_DBC << " - DBC format: OK." << "\n\n";
-
+#endif
     return true;
 }
 
@@ -293,7 +294,7 @@ void dump_sql()
     std::cout << SPELL_DBC << " - Closed\n\n";
 
     /********** END: Spell.dbc **********/
-
+#if 0
     /********** START: Achievement.dbc **********/
 
     FILE *fAchievementSql = fopen(ACHIEVEMENT_SQL, "w");
@@ -641,4 +642,5 @@ void dump_sql()
     std::cout << ACHIEVEMENT_CRITERIA_DBC << " - Closed\n\n";
 
     /********** END: Achievement_Criteria.dbc **********/
+#endif
 }
