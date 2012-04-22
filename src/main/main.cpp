@@ -19,6 +19,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <stdio.h>
 
 #include "common/common.h"
 #include "dbc/dbc.h"
@@ -70,6 +71,7 @@ int main()
     DBCAchievementCategory.Load(ACHIEVEMENT_CATEGORY_DBC);
     DBCAchievementCriteria.Load(ACHIEVEMENT_CRITERIA_DBC);
 #endif
+
     if(check_dbc())
     {
         dump_sql();
@@ -107,7 +109,7 @@ bool check_dbc()
         return false;
     }
     std::cout << SPELL_DBC << " - DBC format: OK." << "\n\n";
-#endif
+#if 0
     /********** Achievement.dbc **********/
     if(!DBCAchievement.getNumFields())
     {
