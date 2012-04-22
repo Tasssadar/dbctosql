@@ -24,246 +24,253 @@ char const *SPELL_DBC   = "Spell.dbc";
 char const *SPELL_SQL   = "spell_dbc.sql";
 char const *SPELL_TABLE = "dbc_spell";
 
-#define SPELL_DBC_CLIENT_BUILD  9947 // 3.1.3
+#define SPELL_DBC_CLIENT_BUILD  12340 // 3.3.5a
 
-#define SPELL_DBC_COLUMN_NUMS   232
-#define SPELL_DBC_ROWS_NUMS     44673
+#define SPELL_DBC_COLUMN_NUMS   234
+#define SPELL_DBC_ROWS_NUMS     49839
 
 // Spell.dbc struct: TrinityCore2 r4907
 char const *spell_translation[SPELL_DBC_COLUMN_NUMS][2] =
 {
     {"uint32",  "id"},                          // Id
-    {"uint32",  "1"},                           // Category
-    {"uint32",  "2"},                           // Dispel
-    {"uint32",  "3"},                           // Mechanic
-    {"uint32",  "4"},                           // Attributes
-    {"uint32",  "5"},                           // AttributesEx
-    {"uint32",  "6"},                           // AttributesEx2
-    {"uint32",  "7"},                           // AttributesEx3
-    {"uint32",  "8"},                           // AttributesEx4
-    {"uint32",  "9"},                           // AttributesEx5
-    {"uint32",  "10"},                          // AttributesEx6
-    {"uint32",  "11"},                          // Stances
-    {"uint32",  "12"},                          // StancesNot
-    {"uint32",  "13"},                          // Targets
-    {"uint32",  "14"},                          // TargetCreatureType
-    {"uint32",  "15"},                          // RequiresSpellFocus
-    {"uint32",  "16"},                          // FacingCasterFlags
-    {"uint32",  "17"},                          // CasterAuraState
-    {"uint32",  "18"},                          // TargetAuraState
-    {"uint32",  "19"},                          // CasterAuraStateNot
-    {"uint32",  "20"},                          // TargetAuraStateNot
-    {"uint32",  "21"},                          // casterAuraSpell
-    {"uint32",  "22"},                          // targetAuraSpell
-    {"uint32",  "23"},                          // excludeCasterAuraSpell
-    {"uint32",  "24"},                          // excludeTargetAuraSpell
-    {"uint32",  "25"},                          // CastingTimeIndex
-    {"uint32",  "26"},                          // RecoveryTime
-    {"uint32",  "27"},                          // CategoryRecoveryTime
-    {"uint32",  "28"},                          // InterruptFlags
-    {"uint32",  "29"},                          // AuraInterruptFlags
-    {"uint32",  "30"},                          // ChannelInterruptFlags
-    {"uint32",  "31"},                          // procFlags
-    {"uint32",  "32"},                          // procChance
-    {"uint32",  "33"},                          // procCharges
-    {"uint32",  "34"},                          // maxLevel
-    {"uint32",  "35"},                          // baseLevel
-    {"uint32",  "36"},                          // spellLevel
-    {"uint32",  "37"},                          // DurationIndex
-    {"uint32",  "38"},                          // powerType
-    {"uint32",  "39"},                          // manaCost
-    {"uint32",  "40"},                          // manaCostPerlevel
-    {"uint32",  "41"},                          // manaPerSecond
-    {"uint32",  "42"},                          // manaPerSecondPerLevel
-    {"uint32",  "43"},                          // rangeIndex
-    {"float",   "44"},                          // speed
-    {"uint32",  "45"},                          // modalNextSpell, not used
-    {"uint32",  "46"},                          // StackAmount
-    {"uint32",  "47"},                          // Totem[0]
-    {"uint32",  "48"},                          // Totem[1]
-    {"int32",   "49"},                          // Reagent[0]
-    {"int32",   "50"},                          // Reagent[1]
-    {"int32",   "51"},                          // Reagent[2]
-    {"int32",   "52"},                          // Reagent[3]
-    {"int32",   "53"},                          // Reagent[4]
-    {"int32",   "54"},                          // Reagent[5]
-    {"int32",   "55"},                          // Reagent[6]
-    {"int32",   "56"},                          // Reagent[7]
-    {"uint32",  "57"},                          // ReagentCount[0]
-    {"uint32",  "58"},                          // ReagentCount[1]
-    {"uint32",  "59"},                          // ReagentCount[2]
-    {"uint32",  "60"},                          // ReagentCount[3]
-    {"uint32",  "61"},                          // ReagentCount[4]
-    {"uint32",  "62"},                          // ReagentCount[5]
-    {"uint32",  "63"},                          // ReagentCount[6]
-    {"uint32",  "64"},                          // ReagentCount[7]
-    {"int32",   "65"},                          // EquippedItemClass
-    {"int32",   "66"},                          // EquippedItemSubClassMask
-    {"int32",   "67"},                          // EquippedItemInventoryTypeMask
-    {"uint32",  "68"},                          // Effect[0]
-    {"uint32",  "69"},                          // Effect[1]
-    {"uint32",  "70"},                          // Effect[2]
-    {"int32",   "71"},                          // EffectDieSides[0]
-    {"int32",   "72"},                          // EffectDieSides[1]
-    {"int32",   "73"},                          // EffectDieSides[2]
-    {"int32",   "74"},                          // EffectBaseDice[0]
-    {"int32",   "75"},                          // EffectBaseDice[1]
-    {"int32",   "76"},                          // EffectBaseDice[2]
-    {"float",   "77"},                          // EffectDicePerLevel[0]
-    {"float",   "78"},                          // EffectDicePerLevel[1]
-    {"float",   "79"},                          // EffectDicePerLevel[2]
-    {"float",   "80"},                          // EffectRealPointsPerLevel[0]
-    {"float",   "81"},                          // EffectRealPointsPerLevel[1]
-    {"float",   "82"},                          // EffectRealPointsPerLevel[2]
-    {"int32",   "83"},                          // EffectBasePoints[0]
-    {"int32",   "84"},                          // EffectBasePoints[1]
-    {"int32",   "85"},                          // EffectBasePoints[2]
-    {"uint32",  "86"},                          // EffectMechanic[0]
-    {"uint32",  "87"},                          // EffectMechanic[1]
-    {"uint32",  "88"},                          // EffectMechanic[2]
-    {"uint32",  "89"},                          // EffectImplicitTargetA[0]
-    {"uint32",  "90"},                          // EffectImplicitTargetA[1]
-    {"uint32",  "91"},                          // EffectImplicitTargetA[2]
-    {"uint32",  "92"},                          // EffectImplicitTargetB[0]
-    {"uint32",  "93"},                          // EffectImplicitTargetB[1]
-    {"uint32",  "94"},                          // EffectImplicitTargetB[2]
-    {"uint32",  "95"},                          // EffectRadiusIndex[0]
-    {"uint32",  "96"},                          // EffectRadiusIndex[1]
-    {"uint32",  "97"},                          // EffectRadiusIndex[2]
-    {"uint32",  "98"},                          // EffectApplyAuraName[0]
-    {"uint32",  "99"},                          // EffectApplyAuraName[1]
-    {"uint32",  "100"},                         // EffectApplyAuraName[2]
-    {"uint32",  "101"},                         // EffectAmplitude[0]
-    {"uint32",  "102"},                         // EffectAmplitude[1]
-    {"uint32",  "103"},                         // EffectAmplitude[2]
-    {"float",   "104"},                         // EffectMultipleValue[0]
-    {"float",   "105"},                         // EffectMultipleValue[1]
-    {"float",   "106"},                         // EffectMultipleValue[2]
-    {"uint32",  "107"},                         // EffectChainTarget[0]
-    {"uint32",  "108"},                         // EffectChainTarget[1]
-    {"uint32",  "109"},                         // EffectChainTarget[2]
-    {"uint32",  "110"},                         // EffectItemType[0]
-    {"uint32",  "111"},                         // EffectItemType[1]
-    {"uint32",  "112"},                         // EffectItemType[2]
-    {"int32",   "113"},                         // EffectMiscValue[0]
-    {"int32",   "114"},                         // EffectMiscValue[1]
-    {"int32",   "115"},                         // EffectMiscValue[2]
-    {"int32",   "116"},                         // EffectMiscValueB[0]
-    {"int32",   "117"},                         // EffectMiscValueB[1]
-    {"int32",   "118"},                         // EffectMiscValueB[2]
-    {"uint32",  "119"},                         // EffectTriggerSpell[0]
-    {"uint32",  "120"},                         // EffectTriggerSpell[1]
-    {"uint32",  "121"},                         // EffectTriggerSpell[2]
-    {"float",   "122"},                         // EffectPointsPerComboPoint[0]
-    {"float",   "123"},                         // EffectPointsPerComboPoint[1]
-    {"float",   "124"},                         // EffectPointsPerComboPoint[2]
-    {"flag96",  "125"},                         // EffectSpellClassMask[0]
-    {"flag96",  "126"},                         // EffectSpellClassMask[1]
-    {"flag96",  "127"},                         // EffectSpellClassMask[2]
-    {"uint32",  "128"},                         //
-    {"uint32",  "129"},                         //
-    {"uint32",  "130"},                         //
-    {"uint32",  "131"},                         //
-    {"uint32",  "132"},                         //
-    {"uint32",  "133"},                         //
-    {"uint32",  "134"},                         // SpellVisual[0]
-    {"uint32",  "135"},                         // SpellVisual[1]
-    {"uint32",  "136"},                         // SpellIconID
-    {"uint32",  "137"},                         // activeIconID
-    {"uint32",  "138"},                         // spellPriority, not used
-    {"char*",   "139"},                         // SpellName[0]
-    {"char*",   "140"},                         // SpellName[1]
-    {"char*",   "141"},                         // SpellName[2]
-    {"char*",   "142"},                         // SpellName[3]
-    {"char*",   "143"},                         // SpellName[4]
-    {"char*",   "144"},                         // SpellName[5]
-    {"char*",   "145"},                         // SpellName[6]
-    {"char*",   "146"},                         // SpellName[7]
-    {"char*",   "147"},                         // SpellName[8]
-    {"char*",   "148"},                         // SpellName[9]
-    {"char*",   "149"},                         // SpellName[10]
-    {"char*",   "150"},                         // SpellName[11]
-    {"char*",   "151"},                         // SpellName[12]
-    {"char*",   "152"},                         // SpellName[13]
-    {"char*",   "153"},                         // SpellName[14]
-    {"char*",   "154"},                         // SpellName[15]
-    {"uint32",  "155"},                         // SpellNameFlag, not used
-    {"char*",   "156"},                         // Rank[0]
-    {"char*",   "157"},                         // Rank[1]
-    {"char*",   "158"},                         // Rank[2]
-    {"char*",   "159"},                         // Rank[3]
-    {"char*",   "160"},                         // Rank[4]
-    {"char*",   "161"},                         // Rank[5]
-    {"char*",   "162"},                         // Rank[6]
-    {"char*",   "163"},                         // Rank[7]
-    {"char*",   "164"},                         // Rank[8]
-    {"char*",   "165"},                         // Rank[9]
-    {"char*",   "166"},                         // Rank[10]
-    {"char*",   "167"},                         // Rank[11]
-    {"char*",   "168"},                         // Rank[12]
-    {"char*",   "169"},                         // Rank[13]
-    {"char*",   "170"},                         // Rank[14]
-    {"char*",   "171"},                         // Rank[15]
-    {"uint32",  "172"},                         // RankFlags, not used
-    {"char*",   "173"},                         // Description[0]
-    {"char*",   "174"},                         // Description[1]
-    {"char*",   "175"},                         // Description[2]
-    {"char*",   "176"},                         // Description[3]
-    {"char*",   "177"},                         // Description[4]
-    {"char*",   "178"},                         // Description[5]
-    {"char*",   "179"},                         // Description[6]
-    {"char*",   "180"},                         // Description[7]
-    {"char*",   "181"},                         // Description[8]
-    {"char*",   "182"},                         // Description[9]
-    {"char*",   "183"},                         // Description[10]
-    {"char*",   "184"},                         // Description[11]
-    {"char*",   "185"},                         // Description[12]
-    {"char*",   "186"},                         // Description[13]
-    {"char*",   "187"},                         // Description[14]
-    {"char*",   "188"},                         // Description[15]
-    {"uint32",  "189"},                         // DescriptionFlags, not used
-    {"char*",   "190"},                         // ToolTip[0], not used
-    {"char*",   "191"},                         // ToolTip[1], not used
-    {"char*",   "192"},                         // ToolTip[2], not used
-    {"char*",   "193"},                         // ToolTip[3], not used
-    {"char*",   "194"},                         // ToolTip[4], not used
-    {"char*",   "195"},                         // ToolTip[5], not used
-    {"char*",   "196"},                         // ToolTip[6], not used
-    {"char*",   "197"},                         // ToolTip[7], not used
-    {"char*",   "198"},                         // ToolTip[8], not used
-    {"char*",   "199"},                         // ToolTip[9], not used
-    {"char*",   "200"},                         // ToolTip[10], not used
-    {"char*",   "201"},                         // ToolTip[11], not used
-    {"char*",   "202"},                         // ToolTip[12], not used
-    {"char*",   "203"},                         // ToolTip[13], not used
-    {"char*",   "204"},                         // ToolTip[14], not used
-    {"char*",   "205"},                         // ToolTip[15], not used
-    {"uint32",  "206"},                         // ToolTipFlags, not used
-    {"uint32",  "207"},                         // ManaCostPercentage
-    {"uint32",  "208"},                         // StartRecoveryCategory
-    {"uint32",  "209"},                         // StartRecoveryTime
-    {"uint32",  "210"},                         // MaxTargetLevel
-    {"uint32",  "211"},                         // SpellFamilyName
-    {"flag96",  "212"},                         // SpellFamilyFlags[0]
-    {"flag96",  "213"},                         // SpellFamilyFlags[1]
-    {"flag96",  "214"},                         // SpellFamilyFlags[2]
-    {"uint32",  "215"},                         // MaxAffectedTargets
-    {"uint32",  "216"},                         // DmgClass
-    {"uint32",  "217"},                         // PreventionType
-    {"uint32",  "218"},                         // StanceBarOrder, not used
-    {"float",   "219"},                         // DmgMultiplier[0]
-    {"float",   "220"},                         // DmgMultiplier[1]
-    {"float",   "221"},                         // DmgMultiplier[2]
-    {"uint32",  "222"},                         // MinFactionId
-    {"uint32",  "223"},                         // MinReputation
-    {"uint32",  "224"},                         // RequiredAuraVision
-    {"uint32",  "225"},                         // TotemCategory[0]
-    {"uint32",  "226"},                         // TotemCategory[1]
-    {"int32",   "227"},                         // AreaGroupId
-    {"uint32",  "228"},                         // SchoolMask
-    {"uint32",  "229"},                         // runeCostID
-    {"uint32",  "230"},                         // spellMissileID
-    {"uint32",  "231"},                         // PowerDisplayId
+    {"uint32",  "1_Category"},                           // Category
+    {"uint32",  "2_Dispel"},                           // Dispel
+    {"uint32",  "3_Mechanic"},                           // Mechanic
+    {"uint32",  "4_Attributes"},                           // Attributes
+    {"uint32",  "5_AttributesEx"},                           // AttributesEx
+    {"uint32",  "6_AttributesEx2"},                           // AttributesEx2
+    {"uint32",  "7_AttributesEx3"},                           // AttributesEx3
+    {"uint32",  "8_AttributesEx4"},                           // AttributesEx4
+    {"uint32",  "9_AttributesEx5"},                           // AttributesEx5
+    {"uint32",  "10_AttributesEx6"},                          // AttributesEx6
+    {"uint32",  "11_unk320_1"},                          // Stances
+    {"uint32",  "12_Stances"},                          // StancesNot
+    {"uint32",  "13_unk320_2"},
+    {"uint32",  "14_StancesNot"},                          // Targets
+    {"uint32",  "15_unk320_3"},
+    {"uint32",  "16_Targets"},
+    {"uint32",  "17_TargetCreatureType"},
+    {"uint32",  "18_RequiresSpellFocus"},
+    {"uint32",  "19_FacingCasterFlags"},
+    {"uint32",  "20_CasterAuraState"},
+    {"uint32",  "21_TargetAuraState"},
+    {"uint32",  "22_CasterAuraStateNot"},
+    {"uint32",  "23_TargetAuraStateNot"},
+    {"uint32",  "24_casterAuraSpell"},
+    {"uint32",  "25_targetAuraSpell"},
+    {"uint32",  "26_excludeCasterAuraSpell"},
+    {"uint32",  "27_excludeTargetAuraSpell"},
+    {"uint32",  "28"},
+    {"uint32",  "29"},
+    {"uint32",  "30"},
+    {"uint32",  "31"},
+    {"uint32",  "32"},
+    {"uint32",  "33"},
+    {"uint32",  "34"},
+    {"uint32",  "35"},
+    {"uint32",  "36"},
+    {"uint32",  "37"},
+    {"uint32",  "38"},
+    {"uint32",  "39"},
+    {"uint32",  "40"},
+    {"uint32",  "41"},
+    {"uint32",  "42"},
+    {"uint32",  "43"},
+    {"uint32",  "44"},
+    {"uint32",  "45"},
+    {"uint32",  "46"},
+    {"float",  "47"},
+    {"uint32",  "48"},
+    {"uint32",  "49"},
+    {"uint32",  "50"},
+    {"uint32",  "51"},
+    {"int32",  "52"},
+    {"int32",  "53"},
+    {"int32",  "54"},
+    {"int32",  "55"},
+    {"int32",  "56"},
+    {"int32",  "57"},
+    {"int32",  "58"},
+    {"int32",  "59"},
+    {"uint32",  "60"},
+    {"uint32",  "61"},
+    {"uint32",  "62"},
+    {"uint32",  "63"},
+    {"uint32",  "64"},
+    {"uint32",  "65"},
+    {"uint32",  "66"},
+    {"uint32",  "67"},
+    {"int32",  "68"},
+    {"int32",  "69"},
+    {"int32",  "70"},
+    {"uint32",  "71"},
+    {"uint32",  "72"},
+    {"uint32",  "73"},
+    {"int32",  "74"},
+    {"int32",  "75"},
+    {"int32",  "76"},
+    {"float",  "77"},
+    {"float",  "78"},
+    {"float",  "79"},
+    {"int32",  "80"},
+    {"int32",  "81"},
+    {"int32",  "82"},
+    {"uint32",  "83"},
+    {"uint32",  "84"},
+    {"uint32",  "85"},
+    {"uint32",  "86"},
+    {"uint32",  "87"},
+    {"uint32",  "88"},
+    {"uint32",  "89"},
+    {"uint32",  "90"},
+    {"uint32",  "91"},
+    {"uint32",  "92"},
+    {"uint32",  "93"},
+    {"uint32",  "94"},
+    {"uint32",  "95"},
+    {"uint32",  "96"},
+    {"uint32",  "97"},
+    {"uint32",  "98"},
+    {"uint32",  "99"},
+    {"uint32",  "100"},
+    {"float",  "101"},
+    {"float",  "102"},
+    {"float",  "103"},
+    {"uint32",  "104"},
+    {"uint32",  "105"},
+    {"uint32",  "106"},
+    {"uint32",  "107"},
+    {"uint32",  "108"},
+    {"uint32",  "109"},
+    {"int32",  "110"},
+    {"int32",  "111"},
+    {"int32",  "112"},
+    {"int32",  "113"},
+    {"int32",  "114"},
+    {"int32",  "115"},
+    {"uint32",  "116"},
+    {"uint32",  "117"},
+    {"uint32",  "118"},
+    {"float",  "119"},
+    {"float",  "120"},
+    {"float",  "121"},
+    {"flag96",  "122"},
+    {"flag96",  "123"},
+    {"flag96",  "124"},
+    {"flag96",  "125"},
+    {"flag96",  "126"},
+    {"flag96",  "127"},
+    {"flag96",  "128"},
+    {"flag96",  "129"},
+    {"flag96",  "130"},
+    {"uint32",  "131"},
+    {"uint32",  "132"},
+    {"uint32",  "133"},
+    {"uint32",  "134"},
+    {"uint32",  "135"},
+
+    {"char*",  "136"},
+    {"char*",  "137"},
+    {"char*",  "138"},
+    {"char*",  "139"},
+    {"char*",  "140"},
+    {"char*",  "141"},
+    {"char*",  "142"},
+    {"char*",  "143"},
+    {"char*",  "144"},
+    {"char*",  "145"},
+    {"char*",  "146"},
+    {"char*",  "147"},
+    {"char*",  "148"},
+    {"char*",  "149"},
+    {"char*",  "150"},
+    {"char*",  "151"},
+    {"uint32",  "152"},
+
+    {"char*",  "153"},
+    {"char*",  "154"},
+    {"char*",  "155"},
+    {"char*",  "156"},
+    {"char*",  "157"},
+    {"char*",  "158"},
+    {"char*",  "159"},
+    {"char*",  "160"},
+    {"char*",  "161"},
+    {"char*",  "162"},
+    {"char*",  "163"},
+    {"char*",  "164"},
+    {"char*",  "165"},
+    {"char*",  "166"},
+    {"char*",  "167"},
+    {"char*",  "168"},
+    {"uint32",  "169"},
+
+    {"char*",  "170"},
+    {"char*",  "171"},
+    {"char*",  "172"},
+    {"char*",  "173"},
+    {"char*",  "174"},
+    {"char*",  "175"},
+    {"char*",  "176"},
+    {"char*",  "177"},
+    {"char*",  "178"},
+    {"char*",  "179"},
+    {"char*",  "180"},
+    {"char*",  "181"},
+    {"char*",  "182"},
+    {"char*",  "183"},
+    {"char*",  "184"},
+    {"char*",  "185"},
+    {"uint32",  "186"},
+
+    {"char*",  "187"},
+    {"char*",  "188"},
+    {"char*",  "189"},
+    {"char*",  "190"},
+    {"char*",  "191"},
+    {"char*",  "192"},
+    {"char*",  "193"},
+    {"char*",  "194"},
+    {"char*",  "195"},
+    {"char*",  "196"},
+    {"char*",  "197"},
+    {"char*",  "198"},
+    {"char*",  "199"},
+    {"char*",  "200"},
+    {"char*",  "201"},
+    {"char*",  "202"},
+    {"uint32",  "203"},
+
+    {"uint32",  "204"},
+    {"uint32",  "205"},
+    {"uint32",  "206"},
+    {"uint32",  "207"},
+    {"uint32",  "208"},
+    {"flag96",  "209"},
+    {"flag96",  "210"},
+    {"flag96",  "211"},
+    {"uint32",  "212"},
+    {"uint32",  "213"},
+    {"uint32",  "214"},
+    {"uint32",  "215"},
+    {"float",  "216"},
+    {"float",  "217"},
+    {"float",  "218"},
+    {"uint32",  "219"},
+    {"uint32",  "220"},
+    {"uint32",  "221"},
+    {"uint32",  "222"},
+    {"uint32",  "223"},
+    {"int32",  "224"},
+    {"uint32",  "225"},
+    {"uint32",  "226"},
+    {"uint32",  "227"},
+    {"uint32",  "228"},
+    {"float",  "229"},
+    {"float",  "230"},
+    {"float",  "231"},
+    {"uint32",  "232"},
+    {"uint32",  "233"},
 };
 
 char const *SPELL_TABLE_INDEX = spell_translation[0][1];
