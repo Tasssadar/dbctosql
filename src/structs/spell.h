@@ -46,6 +46,7 @@ char const *spell_translation[SPELL_DBC_COLUMN_NUMS][2] =
     {"uint32",  "11_AttributesEx7"},
     {"uint32",  "12_Stances"},
     {"uint32",  "13_unk320_2"},
+    {"uint32",  "14_StancesNot"},
     {"uint32",  "15_unk320_3"},
     {"uint32",  "16_Targets"},
     {"uint32",  "17_TargetCreatureType"},
